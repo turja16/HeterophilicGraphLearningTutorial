@@ -31,7 +31,7 @@ def normalize_tensor_sparse(mx, symmetric=0):
         mx = mx.dot(r_mat_inv).transpose().dot(r_mat_inv)
         return mx
 
-
+"""
 def sparse_mx_to_torch_sparse_tensor(sparse_mx):
     """Convert a scipy sparse matrix to a torch sparse tensor."""
     sparse_mx = sparse_mx.tocoo().astype(np.float32)
@@ -40,7 +40,17 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
     values = torch.from_numpy(sparse_mx.data)
     shape = torch.Size(sparse_mx.shape)
     return torch.sparse.DoubleTensor(indices, values, shape)
+"""
 
+def sparse_mx_to_torch_sparse_tensor(sparse_mx):
+    """Convert a scipy sparse matrix to a torch sparse tensor."""
+    sparse_mx = sparse_mx.tocoo().astype(np.float32)
+    # The fix is here: replace torch.from_numpy with torch.tensor
+    indices = torch.tensor(
+        np.vstack((sparse_mx.row, sparse_mx.col)).astype(np.int64))
+    values = torch.tensor(sparse_mx.data)
+    shape = torch.Size(sparse_mx.shape)
+    return torch.sparse_coo_tensor(indices, values, size=shape, dtype=torch.float32)
 
 @torch.no_grad()
 def accuracy(pr_logits, gt_labels):
