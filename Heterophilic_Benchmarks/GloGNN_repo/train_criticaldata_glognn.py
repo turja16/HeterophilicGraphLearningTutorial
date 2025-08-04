@@ -119,7 +119,8 @@ def train_criticaldata_glognn(device: torch.device,
     #
     labels = npz_data['node_labels']
     features = npz_data['node_features']
-    adj = nx.adj_matrix(nx.from_edgelist(edge))
+  
+    adj = nx.adjacency_matrix(nx.from_edgelist(edge))
     #
     adj = normalize_tensor_sparse(adj + sp.eye(adj.shape[0]), symmetric=1)
     adj = sparse_mx_to_torch_sparse_tensor(adj)
