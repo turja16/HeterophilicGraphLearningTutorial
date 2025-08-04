@@ -4,7 +4,10 @@
 [submodule "ACM-GNN"]
 	url = https://github.com/turja16/ACM-GNN.git
 	path = ACM-GNN
+	branch = main
 [submodule "https://github.com/turja16/Heterophilic_Benchmarks.git"]
 	branch = main
 [submodule "https://github.com/turja16/ACM-GNN.git"]
+	branch = main
+[submodule "ACMGNN"]
 	branch = main
