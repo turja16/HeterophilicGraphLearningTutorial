@@ -1,0 +1,3 @@
+[submodule "Heterophilic_Benchmarks"]
+	path = Heterophilic_Benchmarks
+	url = https://github.com/turja16/Heterophilic_Benchmarks.git
