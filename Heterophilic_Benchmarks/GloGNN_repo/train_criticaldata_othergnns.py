@@ -160,12 +160,21 @@ def train_criticaldata_othergnns(device: torch.device,
 
     # format
     data = NCDataset(dataset_str)
+    """
     data.graph = {
         'edge_index': torch.as_tensor(edge.T).to(device),
         'node_feat': features,
         'edge_feat': None,
         'num_nodes': n}
-
+    """
+    edge_index = torch.tensor(edge.T, dtype=torch.long, device=device)
+    data.graph = {
+        'edge_index': edge_index,
+        'node_feat': features,
+        'edge_feat': None,
+        'num_nodes': n
+    }
+                                
     num_targets = 1 if c == 2 else c
     loss_fn = F.binary_cross_entropy_with_logits if num_targets == 1 else F.cross_entropy
     metric = accuracy if c > 2 else roc_auc
