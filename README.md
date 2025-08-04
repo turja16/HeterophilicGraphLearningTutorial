@@ -24,7 +24,7 @@ In this tutorial, we provide two notebooks:
 | Title                                     | Link to Colab                                                                                                                                                                                                                        |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | *Heterophilic-specific Models on Real World Datasets*     | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jzhu1905/HeterophilicGraphLearningTutorial/blob/main/01_Part_I_Graph_Models_on_Real_World_Dataset.ipynb)       |
-| *Evaluation of Metrics on Synthetic Graphs* | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jzhu1905/HeterophilicGraphLearningTutorial/blob/main/02_Part_II_Heterophily_Metrics_on_Synthetic_Graphs.ipynb) |
+| *Evaluation of Metrics on Synthetic Graphs* | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/turja16/HeterophilicGraphLearningTutorial/blob/main/02_Part_II_Heterophily_Metrics_on_Synthetic_Graphs.ipynb) |
 
 
 ## Citation
