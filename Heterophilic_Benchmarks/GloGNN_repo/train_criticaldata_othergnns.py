@@ -138,11 +138,18 @@ def train_criticaldata_othergnns(device: torch.device,
     adj = sparse_mx_to_torch_sparse_tensor(adj)
     features = normalize_tensor_sparse(features, symmetric=0)
     features = torch.FloatTensor(features)
+    """                                 
     if len(labels.shape) == 1:
         labels = torch.from_numpy(labels)
     else:
         labels = torch.from_numpy(labels).argmax(dim=-1)
-
+    """
+    if len(labels.shape) == 1:
+        labels = torch.tensor(labels, dtype=torch.long)
+    else:
+        labels = torch.tensor(labels, dtype=torch.float32).argmax(dim=-1).long()
+                                 
+    
     # features = features.to(torch.float64)
     # adj = adj.to(torch.float64)
     features = features.to(device)
